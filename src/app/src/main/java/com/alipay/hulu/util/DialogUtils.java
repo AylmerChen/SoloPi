@@ -29,6 +29,7 @@ import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -535,8 +536,9 @@ public class DialogUtils {
                 wm.getDefaultDisplay().getMetrics(metrics);
 
                 // 高度400dp, 宽度260dp
-                int pix = ContextUtil.dip2px(context, 400);
+                int pix = ContextUtil.dip2px(context, 320);
                 int width = ContextUtil.dip2px(context, 270);
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
                 if (metrics.heightPixels < pix) {
                     if (metrics.widthPixels < width) {
                         dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
